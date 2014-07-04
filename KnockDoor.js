@@ -25,8 +25,8 @@ client.on('end', function() {
 Gmailer.options({
 	smtp: {
 		service: "Gmail",
-		user: "famsmkk@gmail.com",
-		pass: "FamigliaFelice"
+		user: "<userAccount>@gmail.com",
+		pass: "<Password>"
 	}
 });
 var buttons = [['1','3','2'],['4','6','5'],['7','9','8'],['*','#','0']];
@@ -72,7 +72,7 @@ var dl   = new lc.PwmAnlControlled(debug);
 
 //to be use when there is no linino
 //setInterval(function(){door.detectCode('1');}, 1000);  
-door.startAlarm();
+door.startAlarm()surname
 door.on('Alarm', function(){
 	console.log('ALARM!!!!!!!!!');
 	client.write('ALARM!!!!!!!!!');
@@ -81,13 +81,13 @@ door.on('Alarm', function(){
 		template: "./assets/templates/demo.html",
 		from: "'Gmail Sender'",
 		to: {
-			email: "fontami1@gmail.com",
-			name: "Michele",
-			surname: "Fontanella"
+			email: "<user>@gmail.com",
+			name: "name",
+			surname: "surname"
 		},
 		data: {
-			name: "Michele",
-			surname: "Fontanella",
+			name: "name",
+			surname: "surname",
 			id: "28329m82198j"
 		},
 		attachments: [
@@ -107,13 +107,13 @@ door.on('Warning', function(){
 		template: "./assets/templates/Warning.html",
 		from: "'Gmail Sender'",
 		to: {
-			email: "fontami1@gmail.com",
-			name: "Michele",
-			surname: "Fontanella"
+			email: "<user>@gmail.com",
+			name: "Name",
+			surname: "Surname"
 		},
 		data: {
-			name: "Michele",
-			surname: "Fontanella",
+			name: "Name",
+			surname: "Surname",
 			id: "28329m82198j"
 		},
 		attachments: [
@@ -136,7 +136,7 @@ door.on("BoardReady", function(){
 door.on('Good', function(){
 	console.log('GOOD CODE!!!!!!!!!');
 	doorClose = !doorClose;
-	console.log('spedisco un ', doorClose);
+	console.log('sending a ', doorClose);
 	dl.enableDimmer(doorClose);
 });
 
